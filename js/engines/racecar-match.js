@@ -154,8 +154,8 @@ $.extend($.scene, {
 									$('#race-announcer').img('people/race-announcer/idle');
 									$.each($.scene.data.carno, function(key, val) { //Hide all the big cars
 									$('#big-car'+(key+1))
-									.empty()
-									.hide();
+										.empty()
+										.hide();
 									});
 									$.scene.data.round--;
 									if ($.scene.data.round>0)
@@ -212,7 +212,8 @@ $.extend($.scene, {
 										{
 											$('#car' + (key+1)).hide();
 										
-										}); 
+										});
+										alert("Demo Ended!"); 
 									}
 									});
 								
