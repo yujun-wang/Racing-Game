@@ -73,7 +73,6 @@ $.extend($.scene, {
 	},
 	
 	scene1: function() {
-		
 		// Populate random numbers that are right anwsers
 		$.scene.data.carno = $.pick($.range(1, $.scene.settings.carOptions), $.scene.settings.carCount);
 		
@@ -208,12 +207,14 @@ $.extend($.scene, {
 									}
 									else
 									{
+										$.sound.play('scenes/2-3/win');
+										$('#race-announcer').img('people/race-announcer/flag');
 										$.each($.scene.data.cars, function(key, val) 
 										{
 											$('#car' + (key+1)).hide();
 										
 										});
-										alert("Demo Ended!"); 
+										$('#dancer').img('people/dancer/dance');
 									}
 									});
 								
