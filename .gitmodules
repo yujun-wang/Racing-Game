@@ -1,0 +1,6 @@
+[submodule "lib/jplayer"]
+	path = lib/jplayer
+	url = git://github.com/happyworm/jPlayer.git
+[submodule "lib/jq.bigtext"]
+	path = lib/jq.bigtext
+	url = git://github.com/zachleat/BigText.git

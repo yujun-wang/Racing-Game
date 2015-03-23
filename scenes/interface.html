@@ -1,0 +1,11 @@
+<script>
+$.extend($.scene, {
+	engine: 'none', // NOTE: This MUST be 'none' for the main interface or else we overwrite other scene information
+	background: 'market'
+});
+$('#gohome').clickable(function() {
+	$.go('menu', {});
+}, {button: 1});
+</script>
+<div id="uiframe" data-img="interface/frame#1" style="left: 0%; top: 0%; width: 100%; height: 100%; z-index: -100"></div>
+<div id="gohome" data-img="buttons/home#1" style="left: 2%; top: 89%; width: 5%; height: 7%"></div>

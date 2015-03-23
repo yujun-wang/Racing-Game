@@ -1,0 +1,152 @@
+<script>
+$.extend($.scene, {
+	
+});
+
+var logo = ['E','D','U','S','S'];
+var text = ["Who are you? - Introductions, Greetings","How old are you?","Presenting the family","Where do you live?","Presenting the extended family","What do family members do","In the art shop","What are people wearing?","What do I know?","Pet parade - Pets, Farm animals","Describing models and teddybears!","Daily Routine - Time","What do I know?","What is happening this week?","Celebrations - Months, Dates","Special days of the year"];
+
+$('#the').hide();
+$('#market').hide();
+$('#flag').hide();
+$('#chinese').hide();
+$('#logo-big').hide();
+$('#logo-small').hide();
+
+
+
+
+part1();
+
+function part1(){
+	for (var i=1;i<=5;i++)
+	{
+		
+		$('#x'+i)
+		.hide()
+		.fadeIn(2000)
+		.text(logo[i-1])
+		.addClass('table'+(i%3+3) + ' bigtext')
+		.slideUp(1000);
+	}
+	
+	setTimeout(part2,3000);
+}
+
+function part2(){
+	for (var i=1;i<=16;i++)
+	{
+		var paint;
+		if (i % 3==1)
+		{
+			paint = 3;
+		}
+		else if (i % 3==2)
+		{
+			paint = 4;
+		}
+		else
+		{
+			paint =5;
+		}
+	
+	
+	
+		dur= paint*500;
+	
+		$('#'+i)
+		.addClass('tablex')
+		.animate({width:"44%"},{queue:false,duration:dur})
+		.html("Unit "+i)
+		.clickable(function(){
+			$.go('home'+($(this).attr('id')));
+		
+		});
+		
+		$('#s'+i)
+		.addClass('tabley')
+		.animate({width:"44%"},{queue:false,duration:dur})
+		.html(text[i-1])
+		.clickable(function(){
+			$.go('home'+$(this).attr('id'));
+		});
+	}
+	
+	$('#the')
+	.addClass('text1')
+	.show();
+	$('#market')
+	.addClass('text1')
+	.show();
+	$('#flag').show();
+	$('#chinese').show();
+	$('#logo-big').show();
+	$('#logo-small').show();
+	
+	$('.tabley').clickable(function() {
+		$(this).prev().trigger('click');
+	});
+}
+
+</script>
+
+<div id="x1" class="sprite" style="left: 10%; top: 0%; width: 10%; height: 87%"></div>
+<div id="x2" class="sprite" style="left: 25%; top: 0%; width: 10%; height: 87%"></div>
+<div id="x3" class="sprite" style="left: 40%; top: 0%; width: 10%; height: 87%"></div>
+<div id="x4" class="sprite" style="left: 55%; top: 0%; width: 10%; height: 87%"></div>
+<div id="x5" class="sprite" style="left: 70%; top: 0%; width: 10%; height: 87%"></div>
+
+<div id="chinese" class="sprite" style="left: 3%; top: 15%; width: 20%; height: 15%">Chinese</div>
+<div id="flag" class="sprite" style="left: 2%; top: 2%; width: 20%; height: 15%"><img src="img/temp/chinese.gif" alt="flag"></div>
+
+<div id="logo-big" class="sprite" style="left: 29%; top: 2%; width: 44%; height: 18%" data-img="interface/tlm"></div>
+
+<div id="logo-small" class="sprite" style="left: 85%; top: 1%; width: 11%; height: 18%" data-img="interface/eduss"></div>
+
+<div id="1" class="sprite" style="left: 3%; top: 22%; width: 0%; height: 5%"></div>
+<div id="s1" class="sprite" style="left: 3%; top: 26.5%; width: 0%; height: 3.5%"></div>
+
+<div id="2" class="sprite" style="left: 3%; top: 31%; width: 0%; height: 5%"></div>
+<div id="s2" class="sprite" style="left: 3%; top: 35.5%; width: 0%; height: 3.5%"></div>
+
+<div id="3" class="sprite" style="left: 3%; top: 40%; width: 0%; height: 5%"></div>
+<div id="s3" class="sprite" style="left: 3%; top: 44.5%; width: 0%; height: 3.5%"></div>
+
+<div id="4" class="sprite" style="left: 3%; top: 49%; width: 0%; height: 5%"></div>
+<div id="s4" class="sprite" style="left: 3%; top: 53.5%; width: 0%; height: 3.5%"></div>
+
+<div id="5" class="sprite" style="left: 3%; top: 58%; width: 0%; height: 5%"></div>
+<div id="s5" class="sprite" style="left: 3%; top: 62.5%; width: 0%; height: 3.5%"></div>
+
+<div id="6" class="sprite" style="left: 3%; top: 67%; width: 0%; height: 5%"></div>
+<div id="s6" class="sprite" style="left: 3%; top: 71.5%; width: 0%; height: 3.5%"></div>
+
+<div id="7" class="sprite" style="left: 3%; top: 76%; width: 0%; height: 5%"></div>
+<div id="s7" class="sprite" style="left: 3%; top: 80.5%; width: 0%; height: 3.5%"></div>
+
+<div id="8" class="sprite" style="left: 3%; top: 85%; width: 0%; height: 5%"></div>
+<div id="s8" class="sprite" style="left: 3%; top: 89.5%; width: 0%; height: 3.5%"></div>
+
+<div id="9" class="sprite" style="left: 52%; top: 22%; width: 0%; height: 5%"></div>
+<div id="s9" class="sprite" style="left: 52%; top: 26.5%; width: 0%; height: 3.5%"></div>
+
+<div id="10" class="sprite" style="left: 52%; top: 31%; width: 0%; height: 5%"></div>
+<div id="s10" class="sprite" style="left: 52%; top: 35.5%; width: 0%; height: 3.5%"></div>
+
+<div id="11" class="sprite" style="left: 52%; top: 40%; width: 0%; height: 5%"></div>
+<div id="s11" class="sprite" style="left: 52%; top: 44.5%; width: 0%; height: 3.5%"></div>
+
+<div id="12" class="sprite" style="left: 52%; top: 49%; width: 0%; height: 5%"></div>
+<div id="s12" class="sprite" style="left: 52%; top: 53.5%; width: 0%; height: 3.5%"></div>
+
+<div id="13" class="sprite" style="left: 52%; top: 58%; width: 0%; height: 5%"></div>
+<div id="s13" class="sprite" style="left: 52%; top: 62.5%; width: 0%; height: 3.5%"></div>
+
+<div id="14" class="sprite" style="left: 52%; top: 67%; width: 0%; height: 5%"></div>
+<div id="s14" class="sprite" style="left: 52%; top: 71.5%; width: 0%; height: 3.5%"></div>
+
+<div id="15" class="sprite" style="left: 52%; top: 76%; width: 0%; height: 5%"></div>
+<div id="s15" class="sprite" style="left: 52%; top: 80.5%; width: 0%; height: 3.5%"></div>
+
+<div id="16" class="sprite" style="left: 52%; top: 85%; width: 0%; height: 5%"></div>
+<div id="s16" class="sprite" style="left: 52%; top: 89.5%; width: 0%; height: 3.5%"></div>

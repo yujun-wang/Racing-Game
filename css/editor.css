@@ -1,0 +1,7 @@
+#scene > div {
+	border: 1px solid #5ca75a;
+}
+
+.clickable {
+	border: 1px dotted red !important;
+}
